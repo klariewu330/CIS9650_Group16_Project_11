@@ -22,24 +22,29 @@ The program requires access to the following public GCS file:
 gs://msba-online-data/CIS9650/Project 11/green_tripdata_2025-06.parquet
 
 # How to Run the Program
-Ensure Python 3.8+ is installed.  
-Install required libraries:
-pip install pandas numpy pyarrow matplotlib google-cloud-storage
+This project can be executed either on Google Colab or on a local machine.
 
+Option 1 – Run on Google Colab (Recommended)
+Open the notebook file in Google Colab:
+CIS9650_final_project.ipynb
+Run all cells in order.
+The notebook will automatically load the dataset directly from Google Cloud Storage using the public bucket:
+msba-online-data/CIS9650/Project11/green_tripdata_2025-06.parquet
+No additional setup or installation is required.
 
-Run the Jupyter Notebook or Python script in sequence:
-1. Load dataset from Google Cloud  
-2. Perform data cleaning  
-3. Generate new variables  
-4. Run model planning and analysis cells  
-5. Review visualizations and conclusions  
+Option 2 – Run Locally
+Download the following files and place them in the same directory on your computer:
+CIS9650_final_project.ipynb
+green_tripdata_2025-06.parquet (optional, only if Google Cloud cannot be accessed)
+Open the notebook using Jupyter Notebook, JupyterLab, or VS Code Notebook.
+Run all cells in order.
+The notebook will first attempt to load the dataset from Google Cloud Storage.
+If the cloud dataset cannot be accessed, the notebook will automatically fall back to using the local Parquet file instead.
 
-The program will automatically compute summary statistics and generate plots such as:
-- Trip distance vs. fare amount (with regression line)  
-- Trip distance vs. tip amount  
-- Payment type tip comparison  
-- Peak hours/days of taxi demand  
-- Popular pickup/dropoff zones  
+Requirements
+Python 3.8+
+Required packages (automatically installed in Colab):
+pip install pandas pyarrow google-cloud-storage matplotlib numpy 
 
 # Technical Analysis (NumPy, Pandas)
 The analysis computes:
